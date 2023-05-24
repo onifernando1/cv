@@ -5,7 +5,22 @@ class General extends React.Component {
     super();
   }
   render() {
-    return <h2>I am a Car!</h2>;
+    return (
+      <div>
+        <form>
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name"></input>
+
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email"></input>
+
+          <label htmlFor="password">Name</label>
+          <input type="password" id="password"></input>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    );
   }
 }
 
