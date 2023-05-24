@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 
-const General = () => {
-  return <div>General</div>;
-};
+class General extends React.Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return <h2>I am a Car!</h2>;
+  }
+}
 
 export default General;
