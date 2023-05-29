@@ -12,7 +12,7 @@ class General extends React.Component {
   }
 
   display = () => {
-    alert(this.state.email);
+    this.setState({ show: false });
   };
 
   onSubmitGeneral = (e) => {
@@ -41,7 +41,9 @@ class General extends React.Component {
 
             <button type="submit">Submit</button>
           </form>
-        ) : null}
+        ) : (
+          <div>Name: {this.state.name}</div>
+        )}
       </div>
     );
   }
