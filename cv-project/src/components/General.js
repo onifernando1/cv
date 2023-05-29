@@ -7,10 +7,11 @@ class General extends React.Component {
     this.state = {
       name: "",
       email: "",
+      show: true,
     };
   }
 
-  show = () => {
+  display = () => {
     alert(this.state.email);
   };
 
@@ -22,7 +23,7 @@ class General extends React.Component {
         email: e.target[1].value,
       },
       () => {
-        this.show();
+        this.display();
       }
     );
   };
@@ -30,15 +31,17 @@ class General extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmitGeneral}>
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name"></input>
+        {this.state.show ? (
+          <form onSubmit={this.onSubmitGeneral}>
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name"></input>
 
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email"></input>
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email"></input>
 
-          <button type="submit">Submit</button>
-        </form>
+            <button type="submit">Submit</button>
+          </form>
+        ) : null}
       </div>
     );
   }
