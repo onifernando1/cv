@@ -7,6 +7,7 @@ class General extends React.Component {
     this.state = {
       name: "",
       email: "",
+      phone: "",
       show: true,
     };
   }
@@ -21,6 +22,7 @@ class General extends React.Component {
       {
         name: e.target[0].value,
         email: e.target[1].value,
+        phone: e.target[2].value,
       },
       () => {
         this.display();
@@ -39,10 +41,17 @@ class General extends React.Component {
             <label htmlFor="email">Email</label>
             <input type="email" id="email"></input>
 
+            <label htmlFor="phone">Phone</label>
+            <input type="number" id="phone"></input>
+
             <button type="submit">Submit</button>
           </form>
         ) : (
-          <div>Name: {this.state.name}</div>
+          <div>
+            <div>Name: {this.state.name}</div>
+            <div>Email: {this.state.email}</div>
+            <div>Phone Number: {this.state.phone}</div>
+          </div>
         )}
       </div>
     );
