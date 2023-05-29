@@ -16,6 +16,14 @@ class General extends React.Component {
     this.setState({ show: false });
   };
 
+  edit = () => {
+    this.setState({ show: true });
+  };
+
+  handleChange = (e) => {
+    this.setState({ name: e.target.value });
+  };
+
   onSubmitGeneral = (e) => {
     e.preventDefault();
     this.setState(
@@ -36,7 +44,12 @@ class General extends React.Component {
         {this.state.show ? (
           <form onSubmit={this.onSubmitGeneral}>
             <label htmlFor="name">Name</label>
-            <input type="text" id="name"></input>
+            <input
+              value={this.state.name}
+              onChange={this.handleChange}
+              type="text"
+              id="name"
+            ></input>
 
             <label htmlFor="email">Email</label>
             <input type="email" id="email"></input>
@@ -48,6 +61,8 @@ class General extends React.Component {
           </form>
         ) : (
           <div>
+            <h3>About Me</h3>
+            <button onClick={this.edit}>Edit</button>
             <div>Name: {this.state.name}</div>
             <div>Email: {this.state.email}</div>
             <div>Phone Number: {this.state.phone}</div>
