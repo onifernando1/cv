@@ -10,12 +10,21 @@ class General extends React.Component {
     };
   }
 
+  show = () => {
+    alert(this.state.email);
+  };
+
   onSubmitGeneral = (e) => {
     e.preventDefault();
-    this.setState({
-      name: e.target[0].value,
-      email: e.target[1].value,
-    });
+    this.setState(
+      {
+        name: e.target[0].value,
+        email: e.target[1].value,
+      },
+      () => {
+        this.show();
+      }
+    );
   };
 
   render() {
