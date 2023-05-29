@@ -49,8 +49,8 @@ class Education extends React.Component {
         ) : (
           <div>
             <div>Name: {this.state.schoolName}</div>
-            <div>Email: {this.state.degree}</div>
-            <div>Phone Number: {this.state.dateOfStudy}</div>
+            <div>Degree: {this.state.degree}</div>
+            <div>Date of study: {this.state.dateOfStudy}</div>
           </div>
         )}
       </div>
