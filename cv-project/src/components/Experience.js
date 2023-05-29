@@ -17,6 +17,10 @@ class Experience extends React.Component {
     this.setState({ show: false });
   };
 
+  edit = () => {
+    this.setState({ show: true });
+  };
+
   handleChange = (changeTarget, e) => {
     this.setState({ [changeTarget]: e.target.value });
   };
@@ -77,6 +81,8 @@ class Experience extends React.Component {
           </form>
         ) : (
           <div>
+            <h3>Experience</h3>
+            <button onClick={this.edit}>Edit</button>
             <div>Company: {this.state.companyName}</div>
             <div>Degree: {this.state.title}</div>
             <div>Main tasks: {this.state.mainTasks}</div>

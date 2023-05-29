@@ -16,6 +16,10 @@ class Education extends React.Component {
     this.setState({ show: false });
   };
 
+  edit = () => {
+    this.setState({ show: true });
+  };
+
   handleChange = (changeTarget, e) => {
     this.setState({ [changeTarget]: e.target.value });
   };
@@ -67,6 +71,8 @@ class Education extends React.Component {
           </form>
         ) : (
           <div>
+            <h3>Education</h3>
+            <button onClick={this.edit}>Edit</button>
             <div>Name: {this.state.schoolName}</div>
             <div>Degree: {this.state.degree}</div>
             <div>Date of study: {this.state.dateOfStudy}</div>
