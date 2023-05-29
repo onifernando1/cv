@@ -16,6 +16,10 @@ class Education extends React.Component {
     this.setState({ show: false });
   };
 
+  handleChange = (changeTarget, e) => {
+    this.setState({ [changeTarget]: e.target.value });
+  };
+
   onSubmitGeneral = (e) => {
     e.preventDefault();
     this.setState(
@@ -36,13 +40,28 @@ class Education extends React.Component {
         {this.state.show ? (
           <form onSubmit={this.onSubmitGeneral}>
             <label htmlFor="schoolName">School Name</label>
-            <input type="text" id="schoolName"></input>
+            <input
+              value={this.state.schoolName}
+              onChange={(e) => this.handleChange("schoolName", e)}
+              type="text"
+              id="schoolName"
+            ></input>
 
             <label htmlFor="degree">Degree</label>
-            <input type="text" id="degree"></input>
+            <input
+              value={this.state.degree}
+              onChange={(e) => this.handleChange("degree", e)}
+              type="text"
+              id="degree"
+            ></input>
 
             <label htmlFor="dateOfStudy">Date of Study</label>
-            <input type="text" id="dateOfStudy"></input>
+            <input
+              value={this.state.dateOfStudy}
+              onChange={(e) => this.handleChange("dateOfStudy", e)}
+              type="text"
+              id="dateOfStudy"
+            ></input>
 
             <button type="submit">Submit</button>
           </form>

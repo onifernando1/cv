@@ -60,7 +60,12 @@ class General extends React.Component {
             ></input>
 
             <label htmlFor="phone">Phone</label>
-            <input type="number" id="phone"></input>
+            <input
+              onChange={(e) => this.handleChange("phone", e)}
+              value={this.state.phone}
+              type="number"
+              id="phone"
+            ></input>
 
             <button type="submit">Submit</button>
           </form>
