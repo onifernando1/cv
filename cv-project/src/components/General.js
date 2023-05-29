@@ -20,8 +20,8 @@ class General extends React.Component {
     this.setState({ show: true });
   };
 
-  handleChange = (e) => {
-    this.setState({ name: e.target.value });
+  handleChange = (changeTarget, e) => {
+    this.setState({ [changeTarget]: e.target.value });
   };
 
   onSubmitGeneral = (e) => {
@@ -46,13 +46,18 @@ class General extends React.Component {
             <label htmlFor="name">Name</label>
             <input
               value={this.state.name}
-              onChange={this.handleChange}
+              onChange={(e) => this.handleChange("name", e)}
               type="text"
               id="name"
             ></input>
 
             <label htmlFor="email">Email</label>
-            <input type="email" id="email"></input>
+            <input
+              onChange={(e) => this.handleChange("email", e)}
+              value={this.state.email}
+              type="email"
+              id="email"
+            ></input>
 
             <label htmlFor="phone">Phone</label>
             <input type="number" id="phone"></input>
